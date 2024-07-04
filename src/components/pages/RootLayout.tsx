@@ -8,12 +8,12 @@ const RootLayout: FC = () => {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="h-full mt-10">
         <Outlet />
-        <nav className="w-full fixed bottom-0 right-0">
-          <Navbar />
-        </nav>
       </main>
+      <nav className="w-full fixed bottom-0 right-0">
+        <Navbar />
+      </nav>
     </div>
   );
 };
