@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
+  /* @font-face {
     font-family: "NotoSansKR";
     src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap")
       format("woff2");
     font-weight: normal;
     font-style: normal;
-  }
+  } */
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
