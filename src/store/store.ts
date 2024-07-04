@@ -1,11 +1,11 @@
-import { create } from "zustand";
+import create from "zustand";
 
 interface NavState {
   navNum: number;
-  navigatePage: (to: number) => void;
+  setNavNum: (value: number) => void;
 }
 
-export const useNavStore = create<NavState>()((set) => ({
+export const useNavStore = create<NavState>((set) => ({
   navNum: 0,
-  navigatePage: (to) => set((state) => ({ navNum: to })),
+  setNavNum: (value: number) => set({ navNum: value }),
 }));
