@@ -1,16 +1,11 @@
-//store.ts 예시코드
-// import { configureStore } from "@reduxjs/toolkit";
-// // ...
+import { create } from "zustand";
 
-// export const store = configureStore({
-//   reducer: {
-//     posts: postsReducer,
-//     comments: commentsReducer,
-//     users: usersReducer,
-//   },
-// });
+interface NavState {
+  navNum: number;
+  navigatePage: (to: number) => void;
+}
 
-// // Infer the `RootState` and `AppDispatch` types from the store itself
-// export type RootState = ReturnType<typeof store.getState>;
-// // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-// export type AppDispatch = typeof store.dispatch;
+export const useNavStore = create<NavState>()((set) => ({
+  navNum: 0,
+  navigatePage: (to) => set((state) => ({ navNum: to })),
+}));
