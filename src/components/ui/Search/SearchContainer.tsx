@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 interface SearchContainerProps {
-  children: JSX.Element;
+  children: JSX.Element[];
 }
 
 const SearchContainer: FC<SearchContainerProps> = ({ children }) => {
