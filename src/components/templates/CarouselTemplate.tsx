@@ -14,13 +14,13 @@ const CarouselTemplate: FC = () => {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-3xl"
+        className="w-full max-w-sm"
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="sm: basis-1/2 md:basis-1/2 lg:basis-1/3"
+              className="basis-1/2 md:basis-1/3 lg:basis-1/4"
             >
               <div className="p-1">
                 <Card>
@@ -32,8 +32,8 @@ const CarouselTemplate: FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* <CarouselPrevious /> */}
+        {/* <CarouselNext /> */}
       </Carousel>
     </>
   );
