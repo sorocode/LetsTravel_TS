@@ -23,6 +23,6 @@ export const fetchPlace = async (
   );
 
 // City 불러오기
-export const fetchCity = async (
+export const fetchCity = (
   countryCode: string
 ): AxiosPromise<Response<City[]>> => apiRequester.get(`city/${countryCode}`);

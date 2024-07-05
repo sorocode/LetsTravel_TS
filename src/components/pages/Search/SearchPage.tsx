@@ -9,11 +9,22 @@ import AutoSearchData from "@/components/ui/Search/AutoSearchData";
 import NorthWestIcon from "@mui/icons-material/NorthWest";
 import { City, Place } from "@/types/httpTypes";
 import { fetchCity } from "@/util/http";
+import { dummyCities } from "@/dummyData/dummyCityData";
+import { useQuery } from "@tanstack/react-query";
 
 const SearchPage: FC = () => {
+  // local 상태
   const [keyword, setKeyword] = useState<string>("");
   const [keyItems, setKeyItems] = useState<City[]>([]);
   const [isSearchMode, setIsSearchMode] = useState<boolean>(false);
+
+  // 추천 여행지 불러오는 쿼리
+  const { data: cityData } = useQuery({
+    queryKey: ["cities"],
+    queryFn: () => fetchCity("JP"),
+  });
+
+  // 검색어 자동완성 관련 코드
   const onChangeData = (e: React.FormEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   };
@@ -72,18 +83,20 @@ const SearchPage: FC = () => {
           )}
         </div>
       </SearchContainer>
-      {!isSearchMode && (
+      {!isSearchMode && cityData && (
         <>
+          {/* FIXME:더미데이터임 */}
           <div className="flex flex-col items-center mt-10 gap-6">
             <div className="w-full mx-auto md:text-xl">
               <p>⛱️ 여름철 인기 여행지</p>
 
-              <CarouselTemplate />
+              <CarouselTemplate data={dummyCities} />
             </div>
+            {/* FIXME:그냥 전체 도시데이터임 */}
             <div className="w-full mx-auto md:text-xl">
               <p>🔥 요즘 뜨는 핫플레이스</p>
 
-              <CarouselTemplate />
+              <CarouselTemplate data={cityData.data} />
             </div>
           </div>
         </>

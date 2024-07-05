@@ -7,7 +7,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CardContent, Card } from "@mui/material";
-const CarouselTemplate: FC = () => {
+import { City } from "@/types/httpTypes";
+
+interface CarouselTemplateProps<T> {
+  data: T;
+}
+const CarouselTemplate: FC<CarouselTemplateProps<City[]>> = ({ data }) => {
   return (
     <>
       <Carousel
@@ -17,13 +22,19 @@ const CarouselTemplate: FC = () => {
         className="w-full max-w-sm md:max-w-xl lg:max-w-3xl"
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {data.map((item, index) => (
             <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex flex-col aspect-square items-center justify-center">
-                    <img src="logo.png" alt="logo.png" />
-                    <span className="text-3xl font-semibold">{index + 1}</span>
+                    <img
+                      src={item.cityPhotoURL}
+                      alt={item.cityNameTranslated}
+                      className="h-full"
+                    />
+                    <span className="text-3xl font-semibold">
+                      {item.cityNameTranslated}
+                    </span>
                   </CardContent>
                 </Card>
               </div>

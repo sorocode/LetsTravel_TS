@@ -21,6 +21,7 @@ export interface City {
   countryCode: string;
   cityName: string;
   cityNameTranslated: string;
+  cityPhotoURL?: string;
 }
 
 //Plan 관련
