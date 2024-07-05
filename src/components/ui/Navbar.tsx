@@ -11,6 +11,7 @@ const Navbar: FC = () => {
   const location = useLocation();
   const { navNum, setNavNum } = useNavStore();
 
+  //FIXME: 여기에 없는 라우터에 접속 가능하게 만들기
   const pathToIndexMap: { [key: string]: number } = {
     "/schedule": 0,
     "/favorites": 1,

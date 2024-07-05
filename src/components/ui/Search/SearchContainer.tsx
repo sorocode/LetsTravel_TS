@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface SearchContainerProps {
-  children: JSX.Element;
+  children: ReactNode[];
 }
 
 const SearchContainer: FC<SearchContainerProps> = ({ children }) => {
-  return <div className="w-screen">{children}</div>;
+  return <div className="flex flex-col items-center gap-1">{children}</div>;
 };
 
 export default SearchContainer;
