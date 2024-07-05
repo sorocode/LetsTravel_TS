@@ -1,6 +1,6 @@
 import { Place } from "@/types/httpTypes";
 import axios, { isAxiosError } from "axios";
-const API_URL = "http://localhost:8080/api";
+const API_URL = import.meta.env.VITE_SERVER_URL;
 
 // Place 불러오기
 export const fetchPlace = async (

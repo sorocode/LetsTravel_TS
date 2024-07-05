@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface SearchContainerProps {
-  children: JSX.Element[];
+  children: ReactNode[];
 }
 
 const SearchContainer: FC<SearchContainerProps> = ({ children }) => {

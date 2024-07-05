@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface AutoSearchContainerProps {
-  children: JSX.Element | boolean | string;
+  children: ReactNode;
 }
 
 const AutoSearchContainer: FC<AutoSearchContainerProps> = ({ children }) => {
