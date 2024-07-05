@@ -68,7 +68,7 @@ const SearchPage: FC = () => {
                     }}
                   >
                     <div className="flex justify-between px-2">
-                      <a href="#">{search.displayName}</a>
+                      <span>{search.displayName}</span>
                       <NorthWestIcon />
                     </div>
                   </AutoSearchData>
