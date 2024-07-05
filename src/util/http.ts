@@ -1,41 +1,26 @@
 import { City, Place } from "@/types/httpTypes";
-import axios, { isAxiosError } from "axios";
+import { apiRequester } from "./axiosConfig";
+import { AxiosPromise } from "axios";
 const API_URL = import.meta.env.VITE_SERVER_URL;
+
+interface Response<T> {
+  data: T;
+  status: string;
+  serverDateTime: string;
+  errorCode?: string; //FAIL<
+}
 
 // Place 불러오기
 export const fetchPlace = async (
   city: number,
   type: number,
   countryCode: string
-): Promise<Place[]> => {
-  try {
-    const response = await axios.get(
-      `${API_URL}/place?city=${city}&type=${type}&country-code=${countryCode}`
-    );
-    const data = response.data;
-    return data.slice(0, 100);
-  } catch (error) {
-    if (isAxiosError(error)) {
-      console.error("Error message: ", error.message);
-    } else {
-      console.error("Unexpected error: ", error);
-    }
-    throw error;
-  }
-};
+): AxiosPromise<Response<Place[]>> =>
+  apiRequester.get(
+    `place?city=${city}&type=${type}&country-code=${countryCode}`
+  );
 
 // City 불러오기
-export const fetchCity = async (countryCode: string): Promise<City[]> => {
-  try {
-    const response = await axios.get(`${API_URL}/city/${countryCode}`);
-    const data = response.data;
-    return data.slice(0, 100);
-  } catch (error) {
-    if (isAxiosError(error)) {
-      console.error("Error message: ", error.message);
-    } else {
-      console.error("Unexpected error: ", error);
-    }
-    throw error;
-  }
-};
+export const fetchCity = async (
+  countryCode: string
+): AxiosPromise<Response<City[]>> => apiRequester.get(`city/${countryCode}`);

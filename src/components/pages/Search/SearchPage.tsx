@@ -20,7 +20,7 @@ const SearchPage: FC = () => {
 
   const updateData = async () => {
     const res = await fetchCity("JP");
-    let b = res
+    let b = res.data
       .filter(
         (list: City) =>
           list.cityNameTranslated.includes(keyword) === true ||
