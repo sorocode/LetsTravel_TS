@@ -2,7 +2,9 @@ import { City, Place } from "@/types/httpTypes";
 import { apiRequester } from "./axiosConfig";
 import { AxiosPromise } from "axios";
 const API_URL = import.meta.env.VITE_SERVER_URL;
+import { QueryClient } from "@tanstack/react-query";
 
+export const queryClient = new QueryClient();
 interface Response<T> {
   data: T;
   status: string;
