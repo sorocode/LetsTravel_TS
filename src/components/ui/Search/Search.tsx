@@ -12,7 +12,7 @@ const Search: FC<SearchProps> = ({ value, onChange }) => {
         type="search"
         name="search"
         id="search"
-        className="w-3/4 h-12 px-4 rounded-lg"
+        className="h-12 w-72 px-4 rounded-lg "
         onChange={onChange}
         value={value}
       />

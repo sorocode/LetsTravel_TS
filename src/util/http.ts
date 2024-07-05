@@ -13,7 +13,7 @@ export const fetchPlace = async (
       `${API_URL}/place?city=${city}&type=${type}&country-code=${countryCode}`
     );
     const data = response.data;
-    return data.slice(0, 10);
+    return data.slice(0, 100);
   } catch (error) {
     if (isAxiosError(error)) {
       console.error("Error message: ", error.message);

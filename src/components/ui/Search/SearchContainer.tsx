@@ -5,7 +5,7 @@ interface SearchContainerProps {
 }
 
 const SearchContainer: FC<SearchContainerProps> = ({ children }) => {
-  return <div className="w-full">{children}</div>;
+  return <div className="flex flex-col items-center gap-1">{children}</div>;
 };
 
 export default SearchContainer;
