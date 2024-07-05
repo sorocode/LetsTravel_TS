@@ -7,21 +7,25 @@ import React, { FC, useEffect, useState } from "react";
 import AutoSearchWrap from "@/components/ui/Search/AutoSearchWrap";
 import AutoSearchData from "@/components/ui/Search/AutoSearchData";
 import NorthWestIcon from "@mui/icons-material/NorthWest";
-import { Place } from "@/types/httpTypes";
-import { fetchPlace } from "@/util/http";
+import { City, Place } from "@/types/httpTypes";
+import { fetchCity } from "@/util/http";
 
 const SearchPage: FC = () => {
   const [keyword, setKeyword] = useState<string>("");
-  const [keyItems, setKeyItems] = useState<Place[]>([]);
+  const [keyItems, setKeyItems] = useState<City[]>([]);
   const [isSearchMode, setIsSearchMode] = useState<boolean>(false);
   const onChangeData = (e: React.FormEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   };
 
   const updateData = async () => {
-    const res = await fetchPlace(39, 52, "JP");
+    const res = await fetchCity("JP");
     let b = res
-      .filter((list: Place) => list.displayName.includes(keyword) === true)
+      .filter(
+        (list: City) =>
+          list.cityNameTranslated.includes(keyword) === true ||
+          list.cityName.toUpperCase().includes(keyword.toUpperCase()) === true
+      )
       .slice(0, 10);
     // console.log(b);
     setKeyItems(b);
@@ -52,13 +56,13 @@ const SearchPage: FC = () => {
               <AutoSearchWrap>
                 {keyItems.map((search, idx) => (
                   <AutoSearchData
-                    key={search.placeId}
+                    key={search.id}
                     onClick={() => {
-                      setKeyword(search.displayName);
+                      setKeyword(search.cityNameTranslated);
                     }}
                   >
                     <div className="flex justify-between px-2">
-                      <span>{search.displayName}</span>
+                      <span>{search.cityNameTranslated}</span>
                       <NorthWestIcon />
                     </div>
                   </AutoSearchData>
