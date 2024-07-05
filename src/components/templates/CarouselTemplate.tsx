@@ -21,7 +21,8 @@ const CarouselTemplate: FC = () => {
             <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <CardContent className="flex flex-col aspect-square items-center justify-center">
+                    <img src="logo.png" alt="logo.png" />
                     <span className="text-3xl font-semibold">{index + 1}</span>
                   </CardContent>
                 </Card>

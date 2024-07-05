@@ -4,7 +4,7 @@ import React, { FC } from "react";
 const FavoritePage: FC = () => {
   return (
     <div>
-      <div className="flex flex-col items-center mt-10 mb-5 mx-4 gap-4">
+      <div className="flex flex-col items-center mt-10 gap-6">
         <div className="w-full mx-auto md:text-xl">
           <p>⛱️ 여름철 인기 여행지</p>
 
