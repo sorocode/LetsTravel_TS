@@ -1,21 +1,15 @@
 import CarouselTemplate from "@/components/templates/CarouselTemplate";
+import { buttonVariants } from "@/components/ui/button";
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 
 const FavoritePage: FC = () => {
   return (
-    <div>
-      <div className="flex flex-col items-center mt-10 gap-6">
-        <div className="w-full mx-auto md:text-xl">
-          <p>⛱️ 여름철 인기 여행지</p>
-
-          <CarouselTemplate />
-        </div>
-        <div className="w-full mx-auto md:text-xl">
-          <p>🔥 요즘 뜨는 핫플레이스</p>
-
-          <CarouselTemplate />
-        </div>
-      </div>
+    <div className="flex flex-col items-center gap-3">
+      <p>아직 찜한 장소가 없습니다.</p>
+      <Link to="/search" className={buttonVariants({ variant: "outline" })}>
+        탐색하러가기
+      </Link>
     </div>
   );
 };

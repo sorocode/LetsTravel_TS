@@ -6,7 +6,7 @@ interface AutoSearchContainerProps {
 
 const AutoSearchContainer: FC<AutoSearchContainerProps> = ({ children }) => {
   return (
-    <div className="border-black border-[1px] mt-1 rounded-sm px-1 py-1 w-[23rem]">
+    <div className="border-black border-[1px] mt-1 rounded-sm px-1 py-1 w-[23rem] md:w-[28rem]">
       {children}
     </div>
   );

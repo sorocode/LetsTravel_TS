@@ -12,9 +12,10 @@ const Search: FC<SearchProps> = ({ value, onChange }) => {
         type="search"
         name="search"
         id="search"
-        className="h-12 w-72 px-4 rounded-lg "
+        className="h-12 w-72 md:w-96 px-4 rounded-lg border-[0.4px] border-gray-300"
         onChange={onChange}
         value={value}
+        placeholder="어디로 떠날까요?"
       />
 
       <Button>검색</Button>
