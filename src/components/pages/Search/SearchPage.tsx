@@ -86,7 +86,7 @@ const SearchPage: FC = () => {
       {!isSearchMode && cityData && (
         <>
           {/* FIXME:더미데이터임 */}
-          <div className="flex flex-col items-center mt-10 gap-6">
+          <div className="flex flex-col items-center mt-10 gap-10">
             <div className="w-full mx-auto md:text-xl">
               <p>⛱️ 여름철 인기 여행지</p>
 
