@@ -12,7 +12,8 @@ export const fetchPlace = async (
     const response = await axios.get(
       `${API_URL}/place?city=${city}&type=${type}&country-code=${countryCode}`
     );
-    return response.data;
+    const data = response.data;
+    return data.slice(0, 10);
   } catch (error) {
     if (isAxiosError(error)) {
       console.error("Error message: ", error.message);
