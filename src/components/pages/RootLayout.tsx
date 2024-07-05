@@ -4,7 +4,7 @@ import Navbar from "../ui/Navbar";
 import Header from "../ui/Header";
 const RootLayout: FC = () => {
   return (
-    <div className="bg-gray-100 max-w-[37.5rem] mx-auto h-dvh max-h-dvh font-NotoSansKR">
+    <div className="bg-gray-100 max-w-[42rem] mx-auto h-dvh max-h-dvh font-NotoSansKR">
       <header>
         <Header />
       </header>
