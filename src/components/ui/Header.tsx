@@ -8,7 +8,9 @@ const Header: FC = () => {
         <Link to="/">
           <img src="/logo.png" alt="logo" width={50} />
         </Link>
-        <span>LetsTravel</span>
+        <span className="text-white text-xl font-semibold font-ShadowsIntoLight">
+          LetsTravel
+        </span>
       </div>
       <Link to="/login">
         <AccountCircle color="action" fontSize="large" />
