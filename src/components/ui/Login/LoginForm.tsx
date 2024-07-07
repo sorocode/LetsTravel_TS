@@ -2,9 +2,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { FC, useState } from "react";
 import { EventHandler } from "@/types/event";
+import { useNavigate } from "react-router-dom";
 interface LoginFormProps {}
 
 const LoginForm: FC<LoginFormProps> = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,6 +16,7 @@ const LoginForm: FC<LoginFormProps> = () => {
     e.preventDefault();
     if (email === "admin@admin.com" && password === "1111") {
       alert("로그인 성공");
+      navigate("/schedule");
       // 여기에 로그인 성공 후의 로직을 추가하세요. 예: 페이지 이동, 토큰 저장 등
     } else {
       setError("로그인 실패: 이메일 또는 비밀번호가 잘못되었습니다.");
