@@ -8,7 +8,7 @@ interface LoginProps {}
 
 const LoginPage: FC<LoginProps> = () => {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-6">
       <form className="flex flex-col justify-center gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="email">이메일</label>
