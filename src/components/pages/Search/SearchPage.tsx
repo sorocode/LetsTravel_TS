@@ -31,6 +31,8 @@ const SearchPage: FC = () => {
 
   const updateData = async () => {
     const res = await fetchCity("JP");
+
+    // FIXME: 빨간줄 없애기
     let b = res.data
       .filter(
         (list: City) =>
