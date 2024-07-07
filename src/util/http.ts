@@ -6,6 +6,7 @@ import { QueryClient } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();
 interface Response<T> {
+  filter(arg0: (list: City) => boolean): unknown;
   data: T;
   status: string;
   serverDateTime: string;

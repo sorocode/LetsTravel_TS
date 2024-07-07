@@ -1,8 +1,9 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { EventHandler } from "@/types/event";
 import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "@/store/store";
 interface LoginFormProps {}
 
 const LoginForm: FC<LoginFormProps> = () => {
@@ -11,10 +12,17 @@ const LoginForm: FC<LoginFormProps> = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const { isLogin, setLogin } = useLoginStore();
+  useEffect(() => {
+    if (isLogin) {
+      navigate("/profile");
+    }
+  }, []);
   // FIXME: 추후 수정되어야하는 임시 로그인 로직
   const onLoginHandler: EventHandler<React.SyntheticEvent> = (e) => {
     e.preventDefault();
-    if (email === "admin@admin.com" && password === "1111") {
+    if (email === "admin" && password === "1111") {
+      setLogin();
       alert("로그인 성공");
       navigate("/schedule");
       // 여기에 로그인 성공 후의 로직을 추가하세요. 예: 페이지 이동, 토큰 저장 등
@@ -30,7 +38,7 @@ const LoginForm: FC<LoginFormProps> = () => {
       <div className="flex flex-col gap-1">
         <label htmlFor="email">이메일</label>
         <input
-          type="email"
+          type="string"
           name="email"
           id="email"
           placeholder="example@gmail.com"
