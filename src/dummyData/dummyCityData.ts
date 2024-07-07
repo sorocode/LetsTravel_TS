@@ -1,4 +1,4 @@
-import { City } from "@/types/httpTypes";
+import { City } from "@/types/http";
 
 export const dummyCities: City[] = [
   {

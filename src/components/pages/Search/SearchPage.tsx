@@ -7,7 +7,7 @@ import React, { FC, useEffect, useState } from "react";
 import AutoSearchWrap from "@/components/ui/Search/AutoSearchWrap";
 import AutoSearchData from "@/components/ui/Search/AutoSearchData";
 import NorthWestIcon from "@mui/icons-material/NorthWest";
-import { City, Place } from "@/types/httpTypes";
+import { City, Place } from "@/types/http";
 import { fetchCity } from "@/util/http";
 import { dummyCities } from "@/dummyData/dummyCityData";
 import { useQuery } from "@tanstack/react-query";

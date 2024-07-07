@@ -35,7 +35,7 @@ const LoginPage: FC<LoginProps> = () => {
           <label htmlFor="autoLogin">자동 로그인</label>
         </div>
         <Button>로그인</Button>
-        <p className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center gap-2">
           <Button type="button" variant="link">
             아이디찾기
           </Button>
@@ -43,7 +43,7 @@ const LoginPage: FC<LoginProps> = () => {
           <Button type="button" variant="link">
             비밀번호 찾기
           </Button>
-        </p>
+        </div>
       </form>
       <Button asChild variant="outline">
         <Link to="/signup">회원가입</Link>

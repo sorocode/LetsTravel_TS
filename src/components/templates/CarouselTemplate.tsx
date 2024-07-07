@@ -5,7 +5,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { CardContent, Card } from "@mui/material";
-import { City } from "@/types/httpTypes";
+import { City } from "@/types/http";
 import { Skeleton } from "../ui/skeleton";
 
 interface CarouselTemplateProps<T> {

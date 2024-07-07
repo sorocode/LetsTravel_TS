@@ -1,4 +1,4 @@
-import { City, Place } from "@/types/httpTypes";
+import { City, Place } from "@/types/http";
 import { apiRequester } from "./axiosConfig";
 import { AxiosPromise } from "axios";
 const API_URL = import.meta.env.VITE_SERVER_URL;
