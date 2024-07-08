@@ -1,4 +1,4 @@
-import { City, Place } from "@/types/httpTypes";
+import { City, Place } from "@/types/http";
 import { apiRequester } from "./axiosConfig";
 import { AxiosPromise } from "axios";
 const API_URL = import.meta.env.VITE_SERVER_URL;
@@ -6,6 +6,7 @@ import { QueryClient } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();
 interface Response<T> {
+  filter(arg0: (list: City) => boolean): unknown;
   data: T;
   status: string;
   serverDateTime: string;

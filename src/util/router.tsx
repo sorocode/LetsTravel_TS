@@ -6,6 +6,7 @@ import SchedulePage from "@/components/pages/Schedule/SchedulePage";
 import FavoritePage from "@/components/pages/Favorite/FavoritePage";
 import MapPage from "@/components/pages/Map/MapPage";
 import LoginPage from "@/components/pages/Login/LoginPage";
+import ProfilePage from "@/components/pages/Profile/ProfilePage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "profile",
+        element: <ProfilePage />,
       },
     ],
   },

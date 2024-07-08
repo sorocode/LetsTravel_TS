@@ -10,7 +10,8 @@ module.exports = {
   prefix: "",
   theme: {
     fontFamily: {
-      NotoSansKR: ["NotoSansKR"],
+      ShadowsIntoLight: ["Shadows Into Light", "cursive"],
+      NotoSansKR: ["Noto Sans KR"],
     },
     container: {
       center: true,
