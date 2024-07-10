@@ -4,8 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { Button } from "../ui/button";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+
 import { CardContent, Card } from "@mui/material";
 import { City } from "@/types/http";
 import { Skeleton } from "../ui/skeleton";
