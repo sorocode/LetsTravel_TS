@@ -4,9 +4,12 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { Button } from "../ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { CardContent, Card } from "@mui/material";
 import { City } from "@/types/http";
 import { Skeleton } from "../ui/skeleton";
+import Modal from "../ui/Modal";
 
 interface CarouselTemplateProps<T> {
   data: T;
@@ -16,22 +19,28 @@ const CarouselTemplate: FC<CarouselTemplateProps<City[]>> = ({ data }) => {
 
   if (data) {
     content = data.map((item, index) => (
-      <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
-        <div className="p-1">
-          <Card>
-            <CardContent className="flex flex-col aspect-square items-center justify-center">
-              <img
-                src={item.cityPhotoURL}
-                alt={item.cityNameTranslated}
-                className="h-full"
-              />
-              <span className="text-3xl font-semibold">
-                {item.cityNameTranslated}
-              </span>
-            </CardContent>
-          </Card>
-        </div>
-      </CarouselItem>
+      <Dialog>
+        <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
+          <div className="p-1">
+            <Card>
+              <CardContent className="flex flex-col aspect-square items-center justify-center">
+                <img
+                  src={item.cityPhotoURL}
+                  alt={item.cityNameTranslated}
+                  className="h-full"
+                />
+                <span className="text-2xl font-semibold">
+                  {item.cityNameTranslated}
+                </span>
+                <DialogTrigger asChild>
+                  <Button variant="outline">선택</Button>
+                </DialogTrigger>
+              </CardContent>
+            </Card>
+          </div>
+        </CarouselItem>
+        <Modal cityData={item} />
+      </Dialog>
     ));
   } else {
     content = (
