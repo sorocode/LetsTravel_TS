@@ -19,7 +19,7 @@ const CarouselTemplate: FC<CarouselTemplateProps<City[]>> = ({ data }) => {
 
   if (data) {
     content = data.map((item, index) => (
-      <Dialog>
+      <>
         <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
           <div className="p-1">
             <Card>
@@ -32,15 +32,12 @@ const CarouselTemplate: FC<CarouselTemplateProps<City[]>> = ({ data }) => {
                 <span className="text-2xl font-semibold">
                   {item.cityNameTranslated}
                 </span>
-                <DialogTrigger asChild>
-                  <Button variant="outline">선택</Button>
-                </DialogTrigger>
+                <Modal cityData={item} />
               </CardContent>
             </Card>
           </div>
         </CarouselItem>
-        <Modal cityData={item} />
-      </Dialog>
+      </>
     ));
   } else {
     content = (
