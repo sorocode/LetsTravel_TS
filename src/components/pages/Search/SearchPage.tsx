@@ -11,6 +11,7 @@ import { City, Place } from "@/types/http";
 import { fetchCity } from "@/util/http";
 import { dummyCities } from "@/dummyData/dummyCityData";
 import { useQuery } from "@tanstack/react-query";
+import { AxiosResponse } from "axios";
 
 const SearchPage: FC = () => {
   // local 상태
@@ -30,9 +31,8 @@ const SearchPage: FC = () => {
   };
 
   const updateData = async () => {
-    const res = await fetchCity("JP");
+    const res: AxiosResponse = await fetchCity("JP");
 
-    // FIXME: 빨간줄 없애기
     let b = res.data
       .filter(
         (list: City) =>
