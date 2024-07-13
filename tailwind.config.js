@@ -22,8 +22,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        main: "#79C9DB",
-        sub: "#b8e0e9b3",
+        main: { DEFAULT: "#79C9DB", foreground: "hsl(var(--main-foreground))" },
+        sub: {
+          DEFAULT: "#b8e0e9b3",
+          foreground: "hsl(var(--sub-foreground))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
