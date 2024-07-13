@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Calendar } from "../calendar";
 import {
   DrawerContent,
@@ -7,12 +7,12 @@ import {
   DrawerTitle,
 } from "../drawer";
 import { DateRange } from "react-day-picker";
-import { addDays, format } from "date-fns";
-const CalendarContent = () => {
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: new Date(2022, 0, 20),
-    to: addDays(new Date(2022, 0, 20), 20),
-  });
+
+interface CalendarContentProps {
+  date: DateRange | undefined;
+  setDate: React.Dispatch<React.SetStateAction<DateRange | undefined>>;
+}
+const CalendarContent: FC<CalendarContentProps> = ({ date, setDate }) => {
   return (
     <DrawerContent>
       <DrawerHeader>
