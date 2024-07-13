@@ -17,7 +17,7 @@ const PlanPage: FunctionComponent<PlanPageProps> = () => {
       </div>
       {/* TODO:db에 일정 저장 */}
       <div className="flex flex-col items-center justify-end">
-        <Button variant="outline">일정 저장하고 계속하기</Button>
+        <Button>일정 저장하고 계속하기</Button>
       </div>
     </div>
   );
