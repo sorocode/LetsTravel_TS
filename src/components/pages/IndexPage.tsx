@@ -10,7 +10,7 @@ const IndexPage: FC<IndexPageProps> = () => {
       <p>인덱스페이지입니다.</p>
       <div className="flex flex-col gap-2">
         <Button asChild>
-          <Link to="favorites">로그인</Link>
+          <Link to="login">로그인</Link>
         </Button>
         <Button asChild>
           <Link to="profile">프로필</Link>
