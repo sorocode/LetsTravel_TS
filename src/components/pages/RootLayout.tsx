@@ -8,7 +8,7 @@ const RootLayout: FC = () => {
       <header>
         <Header />
       </header>
-      <main className="h-full bg-gray-100 mt-5 px-6">
+      <main className="h-full bg-gray-100 pt-5 px-6">
         <Outlet />
       </main>
       {/* <nav className="w-full fixed bottom-0 right-0 ">
