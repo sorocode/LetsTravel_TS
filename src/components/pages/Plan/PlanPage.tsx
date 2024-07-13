@@ -1,10 +1,12 @@
 import { FunctionComponent } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 interface PlanPageProps {}
 
 const PlanPage: FunctionComponent<PlanPageProps> = () => {
   const params = useParams();
-  return <p>현재 선택된 도시: {params.cityName}</p>;
+  const location = useLocation();
+  const cityInfo = { ...location.state };
+  return <p>현재 선택된 도시: {cityInfo.cityNameTranslated}</p>;
 };
 
 export default PlanPage;

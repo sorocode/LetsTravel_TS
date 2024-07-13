@@ -19,7 +19,7 @@ interface ModalProps {
 const Modal: FC<ModalProps> = ({ cityData }) => {
   const navigate = useNavigate();
   const onSubmitHandler = () => {
-    navigate(`/plan/${cityData.cityName}`);
+    navigate(`/plan/${cityData.cityName}`, { state: cityData });
   };
   return (
     <Dialog>
