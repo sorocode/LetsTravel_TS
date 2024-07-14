@@ -1,19 +1,25 @@
 import React, { FC } from "react";
 import { Button } from "@/components/ui/button";
-interface SearchProps {}
+interface SearchProps {
+  value: string;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+}
 
-const Search: FC<SearchProps> = () => {
+const Search: FC<SearchProps> = ({ value, onChange }) => {
   return (
-    <div className="flex justify-center items-center gap-4">
+    <form className="flex justify-center items-center gap-4">
       <input
         type="search"
         name="search"
         id="search"
-        className="w-3/4 h-12 px-4 rounded-lg"
+        className="h-12 w-72 md:w-96 px-4 rounded-lg border-[0.4px] border-gray-300"
+        onChange={onChange}
+        value={value}
+        placeholder="어디로 떠날까요?"
       />
 
       <Button>검색</Button>
-    </div>
+    </form>
   );
 };
 

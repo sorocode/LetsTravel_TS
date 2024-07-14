@@ -10,7 +10,15 @@ const Navbar: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { navNum, setNavNum } = useNavStore();
+  function isPathInNavBar(currentPath: string): number {
+    if (currentPath in pathToIndexMap) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
 
+  //FIXME: 여기에 없는 라우터에 접속 가능하게 만들기
   const pathToIndexMap: { [key: string]: number } = {
     "/schedule": 0,
     "/favorites": 1,
@@ -25,23 +33,25 @@ const Navbar: FC = () => {
     3: "/search",
   };
 
-  // Update Zustand state when the URL changes
-  useEffect(() => {
-    const currentPath = location.pathname;
-    const selectedNavIndex = pathToIndexMap[currentPath] ?? 0;
-    if (navNum !== selectedNavIndex) {
-      setNavNum(selectedNavIndex);
-    }
-  }, [location.pathname, navNum, setNavNum]);
+  // // // Update Zustand state when the URL changes
+  // useEffect(() => {
+  //   const currentPath = location.pathname;
+  //   const selectedNavIndex = isPathInNavBar(currentPath)
+  //     ? pathToIndexMap[currentPath]
+  //     : -1;
+  //   if (navNum !== selectedNavIndex && selectedNavIndex != -1) {
+  //     setNavNum(selectedNavIndex);
+  //   }
+  // }, [location.pathname, navNum, setNavNum]);
 
-  // Update the URL when the selected navigation index changes
-  useEffect(() => {
-    const currentPath = location.pathname;
-    const newPath = indexToPathMap[navNum];
-    if (currentPath !== newPath) {
-      navigate(newPath, { replace: true });
-    }
-  }, [navNum, navigate]);
+  // // Update the URL when the selected navigation index changes
+  // useEffect(() => {
+  //   const currentPath = location.pathname;
+  //   const newPath = indexToPathMap[navNum];
+  //   if (currentPath !== newPath) {
+  //     navigate(newPath, { replace: true });
+  //   }
+  // }, [navNum, navigate]);
 
   const handleChangePage = (
     event: React.SyntheticEvent,

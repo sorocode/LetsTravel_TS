@@ -1,39 +1,59 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+
 import { CardContent, Card } from "@mui/material";
-const CarouselTemplate: FC = () => {
+import { City } from "@/types/http";
+import { Skeleton } from "../ui/skeleton";
+import Modal from "../ui/Modal";
+
+interface CarouselTemplateProps<T> {
+  data: T;
+}
+const CarouselTemplate: FC<CarouselTemplateProps<City[]>> = ({ data }) => {
+  let content: ReactNode;
+
+  if (data) {
+    content = data.map((item, index) => (
+      <>
+        <CarouselItem key={index} className="basis-1/2 md:basis-1/3">
+          <div className="p-1">
+            <Card>
+              <CardContent className="flex flex-col aspect-square items-center justify-center">
+                <img
+                  src={item.cityPhotoURL}
+                  alt={item.cityNameTranslated}
+                  className="h-full"
+                />
+                <span className="text-2xl font-semibold">
+                  {item.cityNameTranslated}
+                </span>
+                <Modal cityData={item} />
+              </CardContent>
+            </Card>
+          </div>
+        </CarouselItem>
+      </>
+    ));
+  } else {
+    content = (
+      <Card>
+        <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+      </Card>
+    );
+  }
   return (
     <>
       <Carousel
         opts={{
           align: "start",
         }}
-        className="w-full max-w-sm"
+        className="w-full max-w-sm md:max-w-xl lg:max-w-3xl"
       >
-        <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem
-              key={index}
-              className="basis-1/2 md:basis-1/3 lg:basis-1/4"
-            >
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-3xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        {/* <CarouselPrevious /> */}
-        {/* <CarouselNext /> */}
+        <CarouselContent>{content}</CarouselContent>
       </Carousel>
     </>
   );
