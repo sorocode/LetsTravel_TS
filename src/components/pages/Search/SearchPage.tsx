@@ -62,30 +62,6 @@ const SearchPage: FC = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <SearchContainer>
-        <Search value={keyword} onChange={onChangeData} />
-        <div>
-          {keyItems.length > 0 && keyword && (
-            <AutoSearchContainer>
-              <AutoSearchWrap>
-                {keyItems.map((search, idx) => (
-                  <AutoSearchData
-                    key={search.id}
-                    onClick={() => {
-                      setKeyword(search.cityNameTranslated);
-                    }}
-                  >
-                    <div className="flex justify-between px-2">
-                      <span>{search.cityNameTranslated}</span>
-                      <NorthWestIcon />
-                    </div>
-                  </AutoSearchData>
-                ))}
-              </AutoSearchWrap>
-            </AutoSearchContainer>
-          )}
-        </div>
-      </SearchContainer>
       {!isSearchMode && cityData && (
         <>
           {/* FIXME:더미데이터임 */}

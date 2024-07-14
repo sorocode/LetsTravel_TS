@@ -5,9 +5,9 @@ import Header from "../ui/Header";
 const RootLayout: FC = () => {
   return (
     <div className="bg-gray-100 max-w-[42rem] mx-auto h-dvh max-h-dvh font-NotoSansKR">
-      <header>
+      {/* <header>
         <Header />
-      </header>
+      </header> */}
       <main className="h-full bg-gray-100 pt-5 px-6">
         <Outlet />
       </main>

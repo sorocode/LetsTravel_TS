@@ -8,6 +8,7 @@ import LoginPage from "@/components/pages/Login/LoginPage";
 import ProfilePage from "@/components/pages/Profile/ProfilePage";
 import PlanPage from "@/components/pages/Plan/PlanPage";
 import IndexPage from "@/components/pages/IndexPage";
+import SearchLayout from "@/components/pages/Search/SearchLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -28,10 +29,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "search",
+        element: <SearchLayout />,
         children: [
           {
             index: true,
             element: <SearchPage />,
+          },
+          {
+            path: "map",
+            element: <MapPage />,
           },
         ],
       },
