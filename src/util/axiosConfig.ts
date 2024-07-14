@@ -1,9 +1,10 @@
 import axios, {
   AxiosError,
   AxiosInstance,
-  AxiosRequestConfig,
   AxiosResponse,
   isAxiosError,
+  InternalAxiosRequestConfig,
+  AxiosHeaders,
 } from "axios";
 import { ErrorResponse } from "react-router-dom";
 
@@ -25,15 +26,25 @@ const httpErrorHandler = (
   return Promise.reject(error);
 };
 
-const setRequestDefaultHeader = (requestConfig: AxiosRequestConfig) => {
+const setRequestDefaultHeader = (
+  requestConfig: InternalAxiosRequestConfig
+): InternalAxiosRequestConfig => {
   const config = requestConfig;
-  config.headers = {
-    ...config.headers,
-    "Content-Type": "application/json;charset=utf-8",
-  };
+  if (config.headers) {
+    (config.headers as AxiosHeaders).set(
+      "Content-Type",
+      "application/json;charset=utf-8"
+    );
+  } else {
+    config.headers = new AxiosHeaders();
+    config.headers.set("Content-Type", "application/json;charset=utf-8");
+  }
   return config;
 };
-apiRequester.interceptors.request.use(setRequestDefaultHeader);
+
+apiRequester.interceptors.request.use(setRequestDefaultHeader, (error) =>
+  Promise.reject(error)
+);
 apiRequester.interceptors.response.use(
   (response: AxiosResponse) => response,
   httpErrorHandler
