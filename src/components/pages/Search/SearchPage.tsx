@@ -22,6 +22,7 @@ const SearchPage: FC = () => {
   // 추천 여행지 불러오는 쿼리
   const { data: cityData } = useQuery({
     queryKey: ["cities"],
+    //FIXME: JP로 하드코딩된 값 바꾸기
     queryFn: () => fetchCity("JP"),
   });
 
