@@ -1,4 +1,3 @@
-import React from "react";
 import RootLayout from "../components/pages/RootLayout";
 import { createBrowserRouter } from "react-router-dom";
 import SearchPage from "@/components/pages/Search/SearchPage";
@@ -7,11 +6,17 @@ import FavoritePage from "@/components/pages/Favorite/FavoritePage";
 import MapPage from "@/components/pages/Map/MapPage";
 import LoginPage from "@/components/pages/Login/LoginPage";
 import ProfilePage from "@/components/pages/Profile/ProfilePage";
+import PlanPage from "@/components/pages/Plan/PlanPage";
+import IndexPage from "@/components/pages/IndexPage";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
+      {
+        index: true,
+        element: <IndexPage />,
+      },
       {
         path: "schedule",
         children: [
@@ -25,7 +30,6 @@ export const router = createBrowserRouter([
         path: "search",
         children: [
           {
-            // TODO:나라 검색 컴포넌트로 변경하기
             index: true,
             element: <SearchPage />,
           },
@@ -46,6 +50,15 @@ export const router = createBrowserRouter([
       {
         path: "profile",
         element: <ProfilePage />,
+      },
+      {
+        path: "plan",
+        children: [
+          {
+            path: ":cityName",
+            element: <PlanPage />,
+          },
+        ],
       },
     ],
   },

@@ -42,7 +42,7 @@ const LoginForm: FC<LoginFormProps> = () => {
           name="email"
           id="email"
           placeholder="example@gmail.com"
-          className="px-2 py-1 w-full h-12 rounded-md"
+          className="px-2 py-1 w-full h-12 rounded-md border-2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -53,7 +53,7 @@ const LoginForm: FC<LoginFormProps> = () => {
           type="password"
           name="password"
           id="password"
-          className="px-2 py-1 w-full h-12 rounded-md"
+          className="px-2 py-1 w-full h-12 rounded-md border-2"
           placeholder="your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
