@@ -7,16 +7,23 @@ import MapPage from "@/components/pages/Map/MapPage";
 import LoginPage from "@/components/pages/Login/LoginPage";
 import ProfilePage from "@/components/pages/Profile/ProfilePage";
 import PlanPage from "@/components/pages/Plan/PlanPage";
-import IndexPage from "@/components/pages/IndexPage";
+import IndexPage from "@/components/pages/Index/IndexPage";
 import SearchLayout from "@/components/pages/Search/SearchLayout";
+import IndexLayout from "@/components/pages/Index/IndexLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
       {
-        index: true,
-        element: <IndexPage />,
+        path: "/",
+        element: <IndexLayout />,
+        children: [
+          {
+            index: true,
+            element: <IndexPage />,
+          },
+        ],
       },
       {
         path: "schedule",

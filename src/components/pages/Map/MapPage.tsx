@@ -1,6 +1,6 @@
-import MapContainer from "@/components/ui/Map/MapContainer";
 import { Marker } from "@vis.gl/react-google-maps";
 import React, { FC } from "react";
+import MapContainer from "./MapContainer";
 
 const MapPage: FC = () => {
   return (

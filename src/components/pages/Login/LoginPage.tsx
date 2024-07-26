@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FC } from "react";
 import { Separator } from "@/components/ui/separator";
 
-import LoginForm from "@/components/ui/Login/LoginForm";
+import LoginForm from "./LoginForm";
 
 interface LoginProps {}
 

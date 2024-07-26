@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import PlanArea from "@/components/ui/Plan/PlanArea";
-import RecommendArea from "@/components/ui/Plan/RecommendArea";
+import PlanArea from "./PlanArea";
+import RecommendArea from "./RecommendArea";
+
 import { FunctionComponent } from "react";
 import { useLocation, useParams } from "react-router-dom";
 interface PlanPageProps {}
