@@ -1,4 +1,3 @@
-import CarouselTemplate from "@/components/templates/CarouselTemplate";
 import { buttonVariants } from "@/components/ui/button";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 interface IndexPageProps {}
@@ -7,7 +7,6 @@ interface IndexPageProps {}
 const IndexPage: FC<IndexPageProps> = () => {
   return (
     <>
-      <p>인덱스페이지입니다.</p>
       <div className="flex flex-col gap-2">
         <Button asChild>
           <Link to="login">로그인</Link>

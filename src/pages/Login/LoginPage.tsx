@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { FC } from "react";
 import { Separator } from "@/components/ui/separator";
 
-import LoginForm from "@/components/ui/Login/LoginForm";
+import LoginForm from "./LoginForm";
 
 interface LoginProps {}
 
 const LoginPage: FC<LoginProps> = () => {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 mt-10">
+        <p className="font-medium text-lg">로그인</p>
       <LoginForm />
       <div className="flex justify-center items-center gap-2">
         <Button type="button" variant="link">
