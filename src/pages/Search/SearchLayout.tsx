@@ -1,4 +1,4 @@
-import Header from "@/components/ui/Search/Header";
+import Header from "@/pages/Search/Search/Header";
 import { Outlet } from "react-router-dom";
 
 const SearchLayout = () => {

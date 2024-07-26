@@ -1,4 +1,4 @@
-import Search from "@/components/ui/Search/Search";
+import Search from "@/pages/Search/Search/Search";
 import { fetchCity } from "@/util/http";
 
 import { ChevronLeft, MapIcon, Menu } from "lucide-react";
@@ -9,7 +9,6 @@ import AutoSearchWrap from "./AutoSearchWrap";
 import AutoSearchData from "./AutoSearchData";
 import NorthWestIcon from "@mui/icons-material/NorthWest";
 import useSearchCity from "@/hooks/useSearchCity";
-import { SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 const Header = () => {
   const { keyword, keyItems, setKeyword, onChangeData } = useSearchCity(

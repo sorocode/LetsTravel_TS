@@ -1,12 +1,9 @@
-import AutoSearchContainer from "@/components/ui/Search/AutoSearchContainer";
+
 import CarouselTemplate from "@/components/templates/CarouselTemplate";
 
-import Search from "@/components/ui/Search/Search";
-import SearchContainer from "@/components/ui/Search/SearchContainer";
+
 import React, { FC, useEffect, useState } from "react";
-import AutoSearchWrap from "@/components/ui/Search/AutoSearchWrap";
-import AutoSearchData from "@/components/ui/Search/AutoSearchData";
-import NorthWestIcon from "@mui/icons-material/NorthWest";
+
 import { City, Place } from "@/types/http";
 import { fetchCity } from "@/util/http";
 import { dummyCities } from "@/dummyData/dummyCityData";
