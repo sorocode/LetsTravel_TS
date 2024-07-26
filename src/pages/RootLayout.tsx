@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../ui/Navbar";
-import Header from "../ui/Header";
+import Navbar from "@/components/ui/Navbar";
+import Header from "@/components/ui/Header";
 const RootLayout: FC = () => {
   return (
     <div className="bg-gray-100 max-w-[42rem] mx-auto h-dvh max-h-dvh font-NotoSansKR">

@@ -1,6 +1,4 @@
 import React, { FC } from "react";
-import { Button } from "@/components/ui/button";
-import { SearchIcon } from "lucide-react";
 interface SearchProps {
   value: string;
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
