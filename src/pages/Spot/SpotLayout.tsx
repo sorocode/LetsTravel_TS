@@ -8,7 +8,9 @@ const SpotLayout: FunctionComponent<SpotLayoutProps> = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="mx-3 my-8">
+        <Outlet />
+      </div>
     </>
   );
 };

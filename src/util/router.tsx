@@ -11,6 +11,7 @@ import IndexPage from "@/pages/Index/IndexPage";
 import SearchLayout from "@/pages/Search/SearchLayout";
 import IndexLayout from "@/pages/Index/IndexLayout";
 import SpotLayout from "@/pages/Spot/SpotLayout";
+import SpotPage from "@/pages/Spot/SpotPage";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -52,7 +53,12 @@ export const router = createBrowserRouter([
       {
         path: "spot",
         element: <SpotLayout />,
-        children: [{}],
+        children: [
+          {
+            index: true,
+            element: <SpotPage />,
+          },
+        ],
       },
       {
         path: "favorites",
