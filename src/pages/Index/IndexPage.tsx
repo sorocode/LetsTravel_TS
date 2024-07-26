@@ -26,6 +26,9 @@ const IndexPage: FC<IndexPageProps> = () => {
         <Button asChild>
           <Link to="plan">계획</Link>
         </Button>
+        <Button asChild>
+          <Link to="spot">관광지</Link>
+        </Button>
       </div>
     </>
   );
