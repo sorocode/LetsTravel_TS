@@ -1,20 +1,21 @@
-import Stars from "@/components/ui/common/Stars";
 import { FunctionComponent } from "react";
 
-interface SpotPageProps {}
+import SpotInfo from "./SpotInfo";
 
+interface SpotPageProps {}
 const SpotPage: FunctionComponent<SpotPageProps> = () => {
   return (
-    <div>
-      <div className="flex flex-col gap-1">
-        <p className="font-[510] text-2xl">도톤보리</p>
-        <p className="text-gray-500">道頓堀</p>
-      </div>
-      {/* FIXME:하드코딩 된 거 고치기 */}
-      <div id="rating" className="mt-4">
-        <Stars score={4} reviews={3231} />
-      </div>
-    </div>
+    <>
+      <SpotInfo
+        imageUrl="https://images.unsplash.com/photo-1542210940661-5f91cb7afe02?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        score={4}
+        reviews={302}
+        likes={5132}
+        spotName="도톤보리"
+        spotLocalName="道頓堀"
+        location="난바"
+      />
+    </>
   );
 };
 

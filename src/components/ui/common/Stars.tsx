@@ -27,9 +27,9 @@ const Stars: FunctionComponent<StarsProps> = ({ score, reviews }) => {
   }, [score]);
 
   return (
-    <div className="flex items-center">
-      {renderStars}
-      {reviews}
+    <div className="flex items-center gap-1">
+      <span>{renderStars}</span>
+      <span>{reviews}</span>
     </div>
   );
 };
