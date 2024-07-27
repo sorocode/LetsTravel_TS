@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 
 import SpotInfo from "./SpotInfo";
+import SpotMenu from "./SpotMenu";
 
 interface SpotPageProps {}
 const SpotPage: FunctionComponent<SpotPageProps> = () => {
@@ -15,6 +16,7 @@ const SpotPage: FunctionComponent<SpotPageProps> = () => {
         spotLocalName="道頓堀"
         location="난바"
       />
+      <SpotMenu />
     </>
   );
 };
